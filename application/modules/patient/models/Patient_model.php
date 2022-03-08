@@ -52,7 +52,7 @@ class Patient_model extends CI_model {
         $query = $this->db->select('patient.*')
                 ->from('patient')
                 ->where('hospital_id', $this->session->userdata('hospital_id'))
-                ->where("(patient.id LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR phone LIKE '%" . $search . "%' OR address LIKE '%" . $search . "%')", NULL, FALSE)
+                ->where("(serial_id LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR phone LIKE '%" . $search . "%' OR address LIKE '%" . $search . "%')", NULL, FALSE)
                 ->get();
         ;
         return $query->result();
@@ -88,7 +88,7 @@ class Patient_model extends CI_model {
         $query = $this->db->select('patient.*,(select camp_name from camp where id = camp_id) as camp_name')
                 ->from('patient')
                 ->where('hospital_id', $this->session->userdata('hospital_id'))
-                ->where("(patient.id LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR phone LIKE '%" . $search . "%' OR address LIKE '%" . $search . "%')", NULL, FALSE)
+                ->where("(serial_id LIKE '%" . $search . "%' OR name LIKE '%" . $search . "%' OR phone LIKE '%" . $search . "%' OR address LIKE '%" . $search . "%')", NULL, FALSE)
                 ->get();
         ;
         return $query->result();
@@ -332,7 +332,7 @@ class Patient_model extends CI_model {
         if (!empty($searchTerm)) {
             $this->db->select('*');
             $this->db->where('hospital_id', $this->session->userdata('hospital_id'));
-            $this->db->where("name like '%" . $searchTerm . "%' OR id like '%" . $searchTerm . "%'");
+            $this->db->where("name like '%" . $searchTerm . "%' OR serial_id like '%" . $searchTerm . "%'");
             $fetched_records = $this->db->get('patient');
             $users = $fetched_records->result_array();
         } else {
@@ -354,7 +354,7 @@ class Patient_model extends CI_model {
         if (!empty($searchTerm)) {
             $this->db->select('*');
             $this->db->where('hospital_id', $this->session->userdata('hospital_id'));
-            $this->db->where("name like '%" . $searchTerm . "%' OR id like '%" . $searchTerm . "%'");
+            $this->db->where("name like '%" . $searchTerm . "%' OR serial_id like '%" . $searchTerm . "%'");
             $fetched_records = $this->db->get('patient');
             $users = $fetched_records->result_array();
         } else {
@@ -454,7 +454,7 @@ class Patient_model extends CI_model {
 
     function getVitalandSymptoms($searchTerm = '') {
         if (!empty($searchTerm)) {
-            $this->db->where("name like '%" . $searchTerm . "%' OR id like '%" . $searchTerm . "%'");
+            $this->db->where("name like '%" . $searchTerm . "%' OR serial_id like '%" . $searchTerm . "%'");
         }
         //$this->db->where('input_type != "tag"');
         $this->db->where('status', 1);
