@@ -60,18 +60,18 @@
                 <form role="form" action="patient/addPatientMaterial" class="clearfix" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
-                        <select class="form-control m-bot15" id="patientchoose" name="patient" value=''>
-                            
+                        <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label><span class="manda-span">*</span>
+                        <select class="form-control m-bot15" id="patientchoose" name="patient" value='' required>  
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> <?php echo lang('title'); ?></label>
-                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="">
+                        <label for="exampleInputEmail1"> <?php echo lang('title'); ?></label><span class="manda-span">*</span>
+                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> <?php echo lang('file'); ?></label>
-                        <input type="file" name="img_url">
+                        <label for="exampleInputEmail1"> <?php echo lang('file'); ?></label><span class="manda-span">*</span>
+                        <input type="file" name="img_url" required>
+                        <span class="help-block">Allowed Types : gif | jpg | png | jpeg | pdf</span>
                         <span class="help-block"><?php echo lang('recommended_size'); ?> : 3000 x 2024</span>
                     </div>
                     <input type="hidden" name="redirect" value='patient/documents'>
