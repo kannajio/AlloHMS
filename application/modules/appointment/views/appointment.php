@@ -368,7 +368,6 @@
                     <div class="col-md-6 panel">
                         <label for="exampleInputEmail1">  <?php echo lang('doctor'); ?></label> 
                         <select class="form-control m-bot15" id="adoctors" name="doctor" value=''>  
-
                         </select>
                     </div>
                     <div class="col-md-6 panel">
