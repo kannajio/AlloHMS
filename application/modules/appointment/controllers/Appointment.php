@@ -1945,8 +1945,6 @@ class Appointment extends MX_Controller {
                     $doctorname = $appointment->doctorname;
                 }
 
-                //test
-
                 if ($this->ion_auth->in_group(array('Patient'))) {
                     if ($appointment->status == 'Confirmed') {
                         if ($appointment->live != '1') {
