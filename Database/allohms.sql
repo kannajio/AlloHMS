@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2022 at 08:11 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Mar 08, 2022 at 10:56 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -102,21 +102,26 @@ CREATE TABLE `appointment` (
   `doctorname` varchar(1000) DEFAULT NULL,
   `room_id` varchar(500) DEFAULT NULL,
   `live_meeting_link` varchar(1000) DEFAULT NULL,
-  `hospital_id` varchar(100) DEFAULT NULL
+  `hospital_id` varchar(100) DEFAULT NULL,
+  `live` int(2) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `appointment`
 --
 
-INSERT INTO `appointment` (`id`, `patient`, `doctor`, `date`, `time_slot`, `s_time`, `e_time`, `remarks`, `add_date`, `registration_time`, `s_time_key`, `status`, `user`, `request`, `patientname`, `doctorname`, `room_id`, `live_meeting_link`, `hospital_id`) VALUES
-(464, '69', '162', '1636243200', 'Not Selected', 'Not Selected', '', '', '11/07/21', '1636273998', '0', 'Confirmed', '765', '', 'Sathya', 'Mr Doctor', 'hms-meeting-9750182115-764697-466', 'https://meet.jit.si/hms-meeting-9750182115-764697-466', '466'),
-(465, '62', '162', '1636243200', 'Not Selected', 'Not Selected', '', '', '11/07/21', '1636274040', '0', 'Confirmed', '765', '', 'Mr Patient', 'Mr Doctor', 'hms-meeting-9791839199-452093-466', 'https://meet.jit.si/hms-meeting-9791839199-452093-466', '466'),
-(466, '70', '162', '1636329600', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', '', '11/08/21', '1636371990', '207', 'Confirmed', '765', '', 'Test', 'Mr Doctor', 'hms-meeting-7667878400-986735-466', 'https://meet.jit.si/hms-meeting-7667878400-986735-466', '466'),
-(467, '62', '162', '1636934400', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', '', '11/12/21', '1636704506', '207', 'Confirmed', '763', '', 'Mr Patient', 'Mr Doctor', 'hms-meeting-9791839199-153316-466', 'https://meet.jit.si/hms-meeting-9791839199-153316-466', '466'),
-(468, '62', '162', '1636675200', NULL, '', '', '', '11/12/21', '1636706645', '0', 'Confirmed', '765', '', 'Mr Patient', 'Mr Doctor', 'hms-meeting-9791839199-914747-466', 'https://meet.jit.si/hms-meeting-9791839199-914747-466', '466'),
-(469, '62', '162', '1639353600', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', '', '11/12/21', '1636707875', '207', 'Confirmed', '765', '', 'Mr Patient', 'Mr Doctor', 'hms-meeting-9791839199-699776-466', 'https://meet.jit.si/hms-meeting-9791839199-699776-466', '466'),
-(470, '62', '162', '1600732800', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', 'test', '01/19/22', '1642591714', '207', 'Requested', '', 'Yes', 'Mr Patient', 'Mr Doctor', 'hms-meeting-9791839199-776021-466', 'https://meet.jit.si/hms-meeting-9791839199-776021-466', '466');
+INSERT INTO `appointment` (`id`, `patient`, `doctor`, `date`, `time_slot`, `s_time`, `e_time`, `remarks`, `add_date`, `registration_time`, `s_time_key`, `status`, `user`, `request`, `patientname`, `doctorname`, `room_id`, `live_meeting_link`, `hospital_id`, `live`) VALUES
+(1, '62', '162', '1646607600', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', 'Live', '03/07/22', '1646645005', '207', 'Confirmed', '765', '', 'Mr Patient', 'Dr. Rose', 'hms-meeting-9524835677-718114-466', 'https://meet.jit.si/hms-meeting-9524835677-718114-466', '466', 0),
+(2, '62', '162', '1646607600', '05:30 PM To 05:45 PM', '05:30 PM', '05:45 PM', '', '03/07/22', '1646645516', '210', 'Confirmed', '765', '', 'Mr Patient', 'Dr. Rose', 'hms-meeting-9524835677-878849-466', 'https://meet.jit.si/hms-meeting-9524835677-878849-466', '466', 0),
+(3, '62', '162', '1646607600', '06:15 PM To 06:30 PM', '06:15 PM', '06:30 PM', 'Live', '03/07/22', '1646647346', '219', 'Confirmed', '765', '', 'Mr Patient', 'Dr. Rose', 'hms-meeting-9524835677-764962-466', 'https://meet.jit.si/hms-meeting-9524835677-764962-466', '466', 1),
+(4, '62', '162', '1646607600', '05:45 PM To 06:00 PM', '05:45 PM', '06:00 PM', 'Live Test', '03/07/22', '1646652440', '213', 'Confirmed', '790', '', 'Mr Patient', 'Dr. Rose', 'hms-meeting-9524835677-732118-466', 'https://meet.jit.si/hms-meeting-9524835677-732118-466', '466', 1),
+(5, '62', '162', '1646694000', '05:15 PM To 05:30 PM', '05:15 PM', '05:30 PM', '', '03/08/22', '1646731882', '207', 'Confirmed', '763', '', 'Mr Patient', 'Dr. Rose', 'hms-meeting-9524835677-264117-466', 'https://meet.jit.si/hms-meeting-9524835677-264117-466', '466', 0),
+(6, '70', '162', '1646694000', '05:30 PM To 05:45 PM', '05:30 PM', '05:45 PM', '', '03/08/22', '1646731923', '210', 'Pending Confirmation', '763', '', 'Test', 'Dr. Rose', 'hms-meeting-7667878400-162880-466', 'https://meet.jit.si/hms-meeting-7667878400-162880-466', '466', 0),
+(7, '70', '162', '1646694000', '05:45 PM To 06:00 PM', '05:45 PM', '06:00 PM', '', '03/08/22', '1646731968', '213', 'Pending Confirmation', '763', '', 'Test', 'Dr. Rose', 'hms-meeting-7667878400-717475-466', 'https://meet.jit.si/hms-meeting-7667878400-717475-466', '466', 0),
+(8, '70', '162', '1646694000', '05:45 PM To 06:00 PM', '05:45 PM', '06:00 PM', '', '03/08/22', '1646731971', '213', 'Pending Confirmation', '763', '', 'Test', 'Dr. Rose', 'hms-meeting-7667878400-513192-466', 'https://meet.jit.si/hms-meeting-7667878400-513192-466', '466', 0),
+(9, '62', '168', '1646694000', 'Not Selected', 'Not Selected', '', '', '03/08/22', '1646731990', '0', 'Pending Confirmation', '763', '', 'Mr Patient', 'Dr. Priyan', 'hms-meeting-9524835677-685413-466', 'https://meet.jit.si/hms-meeting-9524835677-685413-466', '466', 0),
+(10, '62', '168', '1646694000', 'Not Selected', 'Not Selected', '', '', '03/08/22', '1646731994', '0', 'Pending Confirmation', '763', '', 'Mr Patient', 'Dr. Priyan', 'hms-meeting-9524835677-294405-466', 'https://meet.jit.si/hms-meeting-9524835677-294405-466', '466', 0),
+(11, '70', '162', '1646694000', '06:00 PM To 06:15 PM', '06:00 PM', '06:15 PM', '', '03/08/22', '1646732021', '216', 'Pending Confirmation', '763', '', 'Test', 'Dr. Rose', 'hms-meeting-7667878400-241908-466', 'https://meet.jit.si/hms-meeting-7667878400-241908-466', '466', 0);
 
 -- --------------------------------------------------------
 
@@ -267,7 +272,8 @@ INSERT INTO `autosmsshortcode` (`id`, `name`, `type`) VALUES
 (58, '{start_time}', 'meeting_creation'),
 (59, '{patient_name}', 'meeting_creation'),
 (60, '{doctor_name}', 'meeting_creation'),
-(61, '{hospital_name}', 'meeting_creation');
+(61, '{hospital_name}', 'meeting_creation'),
+(62, '{meeting_link}', 'meeting_creation');
 
 -- --------------------------------------------------------
 
@@ -291,26 +297,26 @@ CREATE TABLE `autosmstemplate` (
 INSERT INTO `autosmstemplate` (`id`, `name`, `message`, `type`, `status`, `hospital_id`) VALUES
 (69, 'Patient Registration Confirmation', 'Dear {name}, You are registred to {company} as a patient to {doctor}. Regards', 'patient', 'Active', '466'),
 (68, 'send appoint confirmation to Doctor', 'Dear {name}, You are appointed as a doctor in {department} . Thank You {company}', 'doctor', 'Active', '466'),
-(67, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Meeting with {doctor_name} on {start_time}. For more information contact with {hospital_name} . Regards', 'meeting_creation', 'Active', '466'),
+(67, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Consulting with {doctor_name}. Please click on the link to join {meeting_link}. For more information contact with {hospital_name}. Regards', 'meeting_creation', 'Active', '466'),
 (66, 'Appointment creation sms to patient', 'Dear {name}, You have an appointment with {doctorname} on {appoinmentdate} at {time_slot} .Please confirm your appointment. For more information contact with {hospital_name} Regards', 'appoinment_creation', 'Active', '466'),
 (65, 'Appointment Confirmation sms to patient', 'Dear {name}, Your appointment with {doctorname} on {appoinmentdate} at {time_slot} is confirmed. For more information contact with {hospital_name} Regards', 'appoinment_confirmation', 'Active', '466'),
 (64, 'Payment successful sms to patient', 'Dear {name}, Your paying amount - Tk {amount} was successful. Thank You Please contact our support for further queries.', 'payment', 'Active', '466'),
 (112, 'Payment successful sms to patient', 'Dear {name}, Your paying amount - Tk {amount} was successful. Thank You Please contact our support for further queries.', 'payment', 'Active', '477'),
 (113, 'Appointment Confirmation sms to patient', 'Dear {name}, Your appointment with {doctorname} on {appoinmentdate} at {time_slot} is confirmed. For more information contact with {hospital_name} Regards', 'appoinment_confirmation', 'Active', '477'),
 (114, 'Appointment creation sms to patient', 'Dear {name}, You have an appointment with {doctorname} on {appoinmentdate} at {time_slot} .Please confirm your appointment. For more information contact with {hospital_name} Regards', 'appoinment_creation', 'Active', '477'),
-(115, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Meeting with {doctor_name} on {start_time}. For more information contact with {hospital_name} . Regards', 'meeting_creation', 'Active', '477'),
+(115, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Consulting with {doctor_name}. Please click on the link to join {meeting_link}. For more information contact with {hospital_name}. Regards', 'meeting_creation', 'Active', '477'),
 (116, 'send appoint confirmation to Doctor', 'Dear {name}, You are appointed as a doctor in {department} . Thank You {company}', 'doctor', 'Active', '477'),
 (117, 'Patient Registration Confirmation', 'Dear {name}, You are registred to {company} as a patient to {doctor}. Regards', 'patient', 'Active', '477'),
 (118, 'Payment successful sms to patient', 'Dear {name}, Your paying amount - Tk {amount} was successful. Thank You Please contact our support for further queries.', 'payment', 'Active', '478'),
 (119, 'Appointment Confirmation sms to patient', 'Dear {name}, Your appointment with {doctorname} on {appoinmentdate} at {time_slot} is confirmed. For more information contact with {hospital_name} Regards', 'appoinment_confirmation', 'Active', '478'),
 (120, 'Appointment creation sms to patient', 'Dear {name}, You have an appointment with {doctorname} on {appoinmentdate} at {time_slot} .Please confirm your appointment. For more information contact with {hospital_name} Regards', 'appoinment_creation', 'Active', '478'),
-(121, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Meeting with {doctor_name} on {start_time}. For more information contact with {hospital_name} . Regards', 'meeting_creation', 'Active', '478'),
+(121, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Consulting with {doctor_name}. Please click on the link to join {meeting_link}. For more information contact with {hospital_name}. Regards', 'meeting_creation', 'Active', '478'),
 (122, 'send appoint confirmation to Doctor', 'Dear {name}, You are appointed as a doctor in {department} . Thank You {company}', 'doctor', 'Active', '478'),
 (123, 'Patient Registration Confirmation', 'Dear {name}, You are registred to {company} as a patient to {doctor}. Regards', 'patient', 'Active', '478'),
 (124, 'Payment successful sms to patient', 'Dear {name}, Your paying amount - Tk {amount} was successful. Thank You Please contact our support for further queries.', 'payment', 'Active', '479'),
 (125, 'Appointment Confirmation sms to patient', 'Dear {name}, Your appointment with {doctorname} on {appoinmentdate} at {time_slot} is confirmed. For more information contact with {hospital_name} Regards', 'appoinment_confirmation', 'Active', '479'),
 (126, 'Appointment creation sms to patient', 'Dear {name}, You have an appointment with {doctorname} on {appoinmentdate} at {time_slot} .Please confirm your appointment. For more information contact with {hospital_name} Regards', 'appoinment_creation', 'Active', '479'),
-(127, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Meeting with {doctor_name} on {start_time}. For more information contact with {hospital_name} . Regards', 'meeting_creation', 'Active', '479'),
+(127, 'Meeting Schedule Notification To Patient', 'Dear {patient_name}, You have a Live Video Consulting with {doctor_name}. Please click on the link to join {meeting_link}. For more information contact with {hospital_name}. Regards', 'meeting_creation', 'Active', '479'),
 (128, 'send appoint confirmation to Doctor', 'Dear {name}, You are appointed as a doctor in {department} . Thank You {company}', 'doctor', 'Active', '479'),
 (129, 'Patient Registration Confirmation', 'Dear {name}, You are registred to {company} as a patient to {doctor}. Regards', 'patient', 'Active', '479'),
 (130, 'Payment successful sms to patient', 'Dear {name}, Your paying amount - Tk {amount} was successful. Thank You Please contact our support for further queries.', 'payment', 'Active', '480'),
@@ -590,9 +596,10 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `img_url`, `name`, `email`, `address`, `phone`, `department`, `profile`, `x`, `y`, `ion_user_id`, `serial_id`, `hospital_id`) VALUES
-(162, NULL, 'Mr Doctor', 'doctor@allohms.com', 'TPK Road, Madurai', '9791839199', 'Cardiology', 'Cardiac Specialist', NULL, NULL, '765', 'AD1765', '466'),
+(162, NULL, 'Dr. Rose', 'doctor@allohms.com', 'TPK Road, Madurai', '9791839199', 'Cardiology', 'Cardiac Specialist', NULL, NULL, '765', 'AD1765', '466'),
 (168, NULL, 'Dr. Priyan', 'doctor@priyan.com', 'Madurai', '8072782765', 'Cardiology', 'Dr. Priyan', NULL, NULL, '791', 'AD1791', '466'),
-(169, NULL, 'Dr. Sathya', 'dr.sathya@allohms.com', 'TPK Road', '8095207092', 'Cardiology', 'Dr. Sathya', NULL, NULL, '805', 'AD1805', '466');
+(169, NULL, 'Dr. Sathya', 'dr.sathya@allohms.com', 'TPK Road', '8095207092', 'Cardiology', 'Dr. Sathya', NULL, NULL, '805', 'AD1805', '466'),
+(170, 'uploads/Doctor-Live2.png', 'Dr. Glory', 'dr.glory@allo.com', '1', '9524835677', 'Cardiology', 'Dr. Glory', NULL, NULL, '816', 'AD1816', '466');
 
 -- --------------------------------------------------------
 
@@ -786,6 +793,14 @@ CREATE TABLE `holidays` (
   `y` varchar(100) DEFAULT NULL,
   `hospital_id` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `holidays`
+--
+
+INSERT INTO `holidays` (`id`, `doctor`, `date`, `x`, `y`, `hospital_id`) VALUES
+(76, '170', '1646434800', NULL, NULL, '466'),
+(77, '170', '1646521200', NULL, NULL, '466');
 
 -- --------------------------------------------------------
 
@@ -1372,9 +1387,9 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`id`, `img_url`, `name`, `email`, `doctor`, `address`, `phone`, `sex`, `birthdate`, `age`, `bloodgroup`, `ion_user_id`, `serial_id`, `patient_id`, `add_date`, `registration_time`, `how_added`, `hospital_id`, `camp_id`) VALUES
-(62, 'uploads/photos_0021.JPG', 'Mr Patient', 'patient@allohms.com', ',162', 'TPK Road, Madurai', '9791839199', 'Male', '01-07-2020', NULL, 'O-', '764', 'AD1764', '158098', '07/28/20', '1595924679', NULL, '466', 0),
+(62, 'uploads/photos_0021.JPG', 'Mr Patient', 'patient@allohms.com', ',162,170,168', 'TPK Road, Madurai', '9524835677', 'Male', '01-07-2020', NULL, 'O-', '764', 'AD1764', '158098', '07/28/20', '1595924679', NULL, '466', 0),
 (69, NULL, 'Sathya', 'sathya.safari@gmail.com', '168,162', 'test', '9750182115', 'Male', '09-09-2021', NULL, 'O-', '809', 'AD1809', '240505', '09/16/21', '1631795775', NULL, '466', 0),
-(70, NULL, 'Test', 'test@allohms.com', ',162', 'Second Floor, Arunachala Arcade, 33/36,', '7667878400', 'Male', '06-03-2012', NULL, 'O-', '815', 'AD1815', '882275', '11/08/21', '1636371736', NULL, '466', 0);
+(70, 'uploads/BabyScripts.png', 'Test', 'test@allohms.com', '', 'Second Floor, Arunachala Arcade, 33/36,', '7667878400', 'Male', '06-03-2012', NULL, 'O-', '815', 'AD1815', '882275', '11/08/21', '1636371736', NULL, '466', 0);
 
 -- --------------------------------------------------------
 
@@ -1435,6 +1450,13 @@ CREATE TABLE `patient_material` (
   `date_string` varchar(100) DEFAULT NULL,
   `hospital_id` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patient_material`
+--
+
+INSERT INTO `patient_material` (`id`, `date`, `title`, `category`, `patient`, `patient_name`, `patient_address`, `patient_phone`, `url`, `date_string`, `hospital_id`) VALUES
+(85, '1646733000', '', NULL, NULL, '0', '0', '0', 'uploads/BabyScripts1.png', '08-03-22', '466');
 
 -- --------------------------------------------------------
 
@@ -2122,7 +2144,8 @@ INSERT INTO `time_schedule` (`id`, `doctor`, `weekday`, `s_time`, `e_time`, `s_t
 (109, '169', 'Monday', '09:30 AM', '09:30 PM', '114', '3', '466'),
 (110, '169', 'Monday', '05:00 PM', '10:00 PM', '204', '3', '466'),
 (111, '162', 'Monday', '05:15 PM', '07:15 PM', '207', '3', '466'),
-(112, '162', 'Tuesday', '05:15 PM', '07:15 PM', '207', '3', '466');
+(112, '162', 'Tuesday', '05:15 PM', '07:15 PM', '207', '3', '466'),
+(113, '170', 'Friday', '09:45 AM', '11:45 AM', '117', '3', '466');
 
 -- --------------------------------------------------------
 
@@ -2229,7 +2252,15 @@ INSERT INTO `time_slot` (`id`, `doctor`, `s_time`, `e_time`, `weekday`, `s_time_
 (2321, '162', '06:15 PM', '06:30 PM', 'Tuesday', '219', '466'),
 (2322, '162', '06:30 PM', '06:45 PM', 'Tuesday', '222', '466'),
 (2323, '162', '06:45 PM', '07:00 PM', 'Tuesday', '225', '466'),
-(2324, '162', '07:00 PM', '07:15 PM', 'Tuesday', '228', '466');
+(2324, '162', '07:00 PM', '07:15 PM', 'Tuesday', '228', '466'),
+(2325, '170', '09:45 AM', '10:00 AM', 'Friday', '117', '466'),
+(2326, '170', '10:00 AM', '10:15 AM', 'Friday', '120', '466'),
+(2327, '170', '10:15 AM', '10:30 AM', 'Friday', '123', '466'),
+(2328, '170', '10:30 AM', '10:45 AM', 'Friday', '126', '466'),
+(2329, '170', '10:45 AM', '11:00 AM', 'Friday', '129', '466'),
+(2330, '170', '11:00 AM', '11:15 AM', 'Friday', '132', '466'),
+(2331, '170', '11:15 AM', '11:30 AM', 'Friday', '135', '466'),
+(2332, '170', '11:30 AM', '11:45 AM', 'Friday', '138', '466');
 
 -- --------------------------------------------------------
 
@@ -2267,14 +2298,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hospital_ion_id`, `permissions`, `otp`, `verified`) VALUES
 (1, '127.0.0.1', 'superadmin', '$2y$08$h5ZsyLuWM8izwhwWlkfDdeylY8jdXwlqhf8C5Tlj.rIP/AL/7W1oO', '', 'superadmin@allohms.com', '', 'eX0.Bq6nP57EuXX4hJkPHO973e7a4c25f1849d3a', 1511432365, 'zCeJpcj78CKqJ4sVxVbxcO', 1268889823, 1644298717, 1, 'Admin', 'istrator', 'ADMIN', '0', NULL, NULL, 0, 0),
-(763, '45.251.231.70', 'admin', '$2y$08$h5ZsyLuWM8izwhwWlkfDdeylY8jdXwlqhf8C5Tlj.rIP/AL/7W1oO', NULL, 'admin@allohms.com', NULL, NULL, NULL, NULL, 1595923316, 1644402175, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0),
-(764, '45.251.231.70', 'Mr Patient', '$2y$08$sqcx4QZ.Ci6LKtOsn60.lefH09o.gcZ4/hPMivggzGnLK.6nytfVG', NULL, 'patient@allohms.com', NULL, NULL, NULL, NULL, 1595924679, 1642770137, 1, NULL, NULL, NULL, '9791839199', '763', NULL, 0, 0),
-(765, '45.251.231.70', 'Mr Doctor', '$2y$08$s5cBXVCCSk8tROWdIeumseXESZtf5dGZRKjtAly0ZpGh.hcj4hdwW', NULL, 'doctor@allohms.com', NULL, NULL, NULL, NULL, 1595924765, 1636707484, 1, NULL, NULL, NULL, '9791839199', '763', 'Patient,Appointment,Email,Report,Prescription,Lab,Patient Encounter', 0, 0),
+(763, '45.251.231.70', 'admin', '$2y$08$h5ZsyLuWM8izwhwWlkfDdeylY8jdXwlqhf8C5Tlj.rIP/AL/7W1oO', NULL, 'admin@allohms.com', NULL, NULL, NULL, NULL, 1595923316, 1646731509, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0),
+(764, '45.251.231.70', 'Mr Patient', '$2y$08$sqcx4QZ.Ci6LKtOsn60.lefH09o.gcZ4/hPMivggzGnLK.6nytfVG', NULL, 'patient@allohms.com', NULL, NULL, NULL, NULL, 1595924679, 1646225564, 1, NULL, NULL, NULL, '9524835677', '763', NULL, 0, 0),
+(765, '45.251.231.70', 'Dr. Rose', '$2y$08$s5cBXVCCSk8tROWdIeumseXESZtf5dGZRKjtAly0ZpGh.hcj4hdwW', NULL, 'doctor@allohms.com', NULL, NULL, NULL, NULL, 1595924765, 1646634772, 1, NULL, NULL, NULL, '9791839199', '763', 'Patient,Appointment,Email,Report,Prescription,Lab,Patient Encounter', 0, 0),
 (767, '45.251.231.70', 'Mr Pharmacist', '$2y$08$fkdyceYtLWgbAxKvv8BXVexszvjABV/8xPQ3bAokwoF6sW/kdOnlW', NULL, 'pharmacist@allohms.com', NULL, NULL, NULL, NULL, 1595928739, 1632301754, 1, NULL, NULL, NULL, '880123456789', '763', 'Pharmacy,Prescription', 0, 0),
-(770, '45.251.231.70', 'Mr Receptionist', '$2y$08$uQ8hjJRTGAEsshOFkS8acue03e.4h3MXQLwH79837vhqu7SH9U3TK', NULL, 'receptionist@allohms.com', NULL, NULL, NULL, NULL, 1595929512, 1635850294, 1, NULL, NULL, NULL, '+919791839199', '763', 'Patient,Appointment,Finance,Email', 0, 0),
-(787, '103.231.160.47', 'Mr Accountant', '$2y$08$GVopabH96MmnQFKKqYCYJOjlr0kgUQUg7GOjsqnJ/.tlcQCfwg0cm', NULL, 'accountant@allohms.com', NULL, NULL, NULL, NULL, 1600753981, 1621941631, 1, NULL, NULL, NULL, '9791839199', '763', 'Patient,Finance,Email,Report', 0, 0),
+(770, '45.251.231.70', 'Mr Receptionist', '$2y$08$uQ8hjJRTGAEsshOFkS8acue03e.4h3MXQLwH79837vhqu7SH9U3TK', NULL, 'receptionist@allohms.com', NULL, NULL, NULL, NULL, 1595929512, 1646212412, 1, NULL, NULL, NULL, '+919791839199', '763', 'Patient,Appointment,Finance,Email', 0, 0),
+(787, '103.231.160.47', 'Mr Accountant', '$2y$08$GVopabH96MmnQFKKqYCYJOjlr0kgUQUg7GOjsqnJ/.tlcQCfwg0cm', NULL, 'accountant@allohms.com', NULL, NULL, NULL, NULL, 1600753981, 1646210521, 1, NULL, NULL, NULL, '9791839199', '763', 'Patient,Finance,Email,Report', 0, 0),
 (789, '103.231.160.47', 'Mr Laboratorist', '$2y$08$B2WZyEiQdFCPndWw8//ZpuFXb7pc00nAiIU8g0S7TJAg5NLK3I5sK', NULL, 'laboratorist@allohms.com', NULL, NULL, NULL, NULL, 1600845967, 1630669705, 1, NULL, NULL, NULL, '0123456789', '763', 'Patient,Donor,Email,Report,Lab', 0, 0),
-(790, '103.231.160.47', 'Mrs Nurse', '$2y$08$HDm7P5PrQk9ZiQEggq.mPeyJfyxMi0b7Mbiztp/gd8838Ls19JP2e', NULL, 'nurse@allohms.com', NULL, NULL, NULL, NULL, 1600846100, 1642591908, 1, NULL, NULL, NULL, '9791839199', '763', NULL, 0, 0),
+(790, '103.231.160.47', 'Mrs Nurse', '$2y$08$HDm7P5PrQk9ZiQEggq.mPeyJfyxMi0b7Mbiztp/gd8838Ls19JP2e', NULL, 'nurse@allohms.com', NULL, NULL, NULL, NULL, 1600846100, 1646655181, 1, NULL, NULL, NULL, '9791839199', '763', 'Patient,Bed,Appointment,Donor,Email,Report,Patient Encounter', 0, 0),
 (791, '157.51.22.243', 'Dr. Priyan', '$2y$08$dhOghKCy9Yh3KekAdG5YYOJciI0BSdPoILzrRcjNRR/C33La1.u/m', NULL, 'doctor@priyan.com', NULL, NULL, NULL, NULL, 1621592071, 1630389505, 1, NULL, NULL, NULL, '8072782765', '763', 'Patient,Appointment,Email,Report,Prescription,Lab', 0, 0),
 (792, '157.51.22.243', 'Nurse 1', '$2y$08$SpUTmpLFzFdGxkgbvUQeWubowuGcf7kjvh7sLpvxhYRLDbvPHO7ii', NULL, 'nurse1@priyan.com', NULL, NULL, NULL, NULL, 1621593245, NULL, 1, NULL, NULL, NULL, '1234567890', '763', 'Patient,Bed,Appointment,Donor,Email,Report', 0, 0),
 (793, '157.51.22.243', 'Pharma1', '$2y$08$dD4EHS4hNqQg4xoUncX4iePPrb2ElvF4d.imU5Fo6jhQG/3C5ivP.', NULL, 'Pharma1@priyan.com', NULL, NULL, NULL, NULL, 1621593406, 1621593444, 1, NULL, NULL, NULL, '9809809809', '763', 'Pharmacy,Email,Medicine,Prescription', 0, 0),
@@ -2293,7 +2324,8 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`
 (810, '::1', 'Sathya pharma', '$2y$08$yYTw0PJvOghDkI85eFpbtuKswwE1kohLn7mj/tYTT1ofWd8Gv8.S.', NULL, 'sathya@gmail.com', NULL, NULL, NULL, NULL, 1632756205, NULL, 1, NULL, NULL, NULL, '98766543210', '763', 'Pharmacy,Email,Medicine,Prescription', 0, 0),
 (813, '162.158.235.152', 'Test123', '$2y$08$MfvEYXqTzktWX9U3LkPV1ez2BY2XGXJe9Ptr4vtPD5AuZnshr7q3G', NULL, 'test@gmail.com', NULL, NULL, NULL, NULL, 1634745706, 1634745723, 1, NULL, NULL, NULL, '9876543210', NULL, NULL, 0, 0),
 (814, '172.70.188.89', 'Test Hospital', '$2y$08$ipDf6Afn9tCr8NY8QbuwQOSfhjIPidJTL9R0at.Ry9F0o5llI1eoe', NULL, 'testhospital@gmail.com', NULL, NULL, NULL, NULL, 1636351757, NULL, 1, NULL, NULL, NULL, '9750182115', NULL, NULL, 0, 0),
-(815, '172.70.143.34', 'Test', '$2y$08$G7uM1TP8dKhD7kpGP.6iweBTPVl.KYQJSiACdtr9OZt/FbqgjtYcm', NULL, 'test@allohms.com', NULL, NULL, NULL, NULL, 1636371736, 1636371868, 1, NULL, NULL, NULL, '7667878400', '763', NULL, 0, 0);
+(815, '172.70.143.34', 'Test', '$2y$08$G7uM1TP8dKhD7kpGP.6iweBTPVl.KYQJSiACdtr9OZt/FbqgjtYcm', NULL, 'test@allohms.com', NULL, NULL, NULL, NULL, 1636371736, 1636371868, 1, NULL, NULL, NULL, '7667878400', '763', NULL, 0, 0),
+(816, '::1', 'Dr. Glory', '$2y$08$cLeG90xNIdux5xRWwkFE6uTGx3Aqzvaw59sA17Eo3//ua4XZM0uIq', NULL, 'dr.glory@allo.com', NULL, NULL, NULL, NULL, 1646111595, NULL, 1, NULL, NULL, NULL, '9524835677', '763', 'Patient,Appointment,Email,Report,Prescription,Lab,Patient Encounter', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2339,7 +2371,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (812, 810, 7),
 (815, 813, 11),
 (816, 814, 11),
-(817, 815, 5);
+(817, 815, 5),
+(818, 816, 4);
 
 -- --------------------------------------------------------
 
@@ -2926,7 +2959,7 @@ ALTER TABLE `alloted_bed`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=471;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `autoemailshortcode`
@@ -2944,7 +2977,7 @@ ALTER TABLE `autoemailtemplate`
 -- AUTO_INCREMENT for table `autosmsshortcode`
 --
 ALTER TABLE `autosmsshortcode`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `autosmstemplate`
@@ -3010,7 +3043,7 @@ ALTER TABLE `diagnostic_report`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `donor`
@@ -3064,7 +3097,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `holidays`
 --
 ALTER TABLE `holidays`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `hospital`
@@ -3106,7 +3139,7 @@ ALTER TABLE `lab_category`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `manualemailshortcode`
@@ -3214,7 +3247,7 @@ ALTER TABLE `patient_deposit`
 -- AUTO_INCREMENT for table `patient_material`
 --
 ALTER TABLE `patient_material`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `patient_risk`
@@ -3364,25 +3397,25 @@ ALTER TABLE `template_fields`
 -- AUTO_INCREMENT for table `time_schedule`
 --
 ALTER TABLE `time_schedule`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `time_slot`
 --
 ALTER TABLE `time_slot`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2325;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2333;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=816;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=817;
 
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=818;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=819;
 
 --
 -- AUTO_INCREMENT for table `vital_symptoms`
