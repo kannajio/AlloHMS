@@ -110,6 +110,8 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('image'); ?></label>
                         <input type="file" name="img_url">
+                        <span class="help-block">Allowed Types : gif | jpg | png | jpeg</span>
+                        <span class="help-block"><?php echo lang('recommended_size'); ?> : 3000 x 2024</span>
                     </div>
                     <div class="form-group last col-md-9">
                         <div id="permission" class="">

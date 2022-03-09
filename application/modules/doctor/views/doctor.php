@@ -59,10 +59,6 @@
 <!--footer start-->
 
 
-
-
-
-
 <!-- Add Accountant Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -156,12 +152,6 @@
     </div><!-- /.modal-dialog -->
 </div>
 <!-- Add Accountant Modal-->
-
-
-
-
-
-
 
 <!-- Edit Event Modal-->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

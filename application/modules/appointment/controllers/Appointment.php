@@ -1919,8 +1919,6 @@ class Appointment extends MX_Controller {
             }
         }
 
-
-
         //  $data['patients'] = $this->patient_model->getVisitor();
         $i = 0;
         foreach ($data['appointments'] as $appointment) {

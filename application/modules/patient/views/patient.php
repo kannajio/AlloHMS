@@ -64,11 +64,6 @@
 <!--main content end-->
 <!--footer start-->
 
-
-
-
-
-
 <!-- Add Patient Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -78,32 +73,30 @@
                 <h4 class="modal-title">  <?php echo lang('register_new_patient'); ?></h4>
             </div>
             <div class="modal-body row">
-                <form role="form" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
+                <form role="form" action="patient/addNew" class="clearfix" method="post" id="addUserForm" enctype="multipart/form-data">
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="name" class="manda-label"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
+                        <input type="email" class="form-control" name="email" id="email" value='' placeholder="">
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('password'); ?></label>
-                        <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('password'); ?><span class="manda-span">*</span></label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="">
                     </div>
 
-
-
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
-                        <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('address'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="address" id="address" value='' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone" value='' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
@@ -231,7 +224,7 @@
                 <h4 class="modal-title">  <?php echo lang('edit_patient'); ?></h4>
             </div>
             <div class="modal-body row">
-                <form role="form" id="editPatientForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
+            <form role="form" id="editDoctorForm" class="clearfix editUserForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
 
                     <!-- <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Patient Id</label>
@@ -239,29 +232,29 @@
                     </div> -->
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" value='' placeholder="">
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="email" id="email" value='' placeholder="">
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('change'); ?><?php echo lang('password'); ?></label>
-                        <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('change'); ?><?php echo lang('password'); ?><span class="manda-span">*</span></label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="">
                     </div>
 
 
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
-                        <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('address'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="address" id="address" value='' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone" value='' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
@@ -377,19 +370,8 @@
         </div><!-- /.modal-dialog -->
     </div>
 </div>
+
 <!-- Edit Patient Modal-->
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg"> 
         <div class="modal-content">

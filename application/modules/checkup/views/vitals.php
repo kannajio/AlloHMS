@@ -74,9 +74,6 @@
 <!--main content end-->
 <!--footer start-->
 
-
-
-
 <!-- Add vital Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -88,12 +85,12 @@
             <div class="modal-body">
                 <form role="form" action="checkup/addNewVital" class="clearfix" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value=''>
+                        <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><?php echo lang('unit'); ?></label>
-                        <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('unit'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('inputype'); ?></label>
@@ -113,6 +110,8 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('image'); ?></label>
                         <input type="file" name="img_url">
+                        <span class="help-block">Allowed Types : gif | jpg | png | jpeg</span>
+                        <span class="help-block"><?php echo lang('recommended_size'); ?> : 3000 x 2024</span>
                     </div>
                     <!-- <div class="form-group last col-md-9">
                         <div id="permission" class="">

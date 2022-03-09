@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1"> <?php echo lang('file'); ?></label><span class="manda-span">*</span>
                         <input type="file" name="img_url" required>
-                        <span class="help-block">Allowed Types : gif | jpg | png | jpeg | pdf</span>
+                        <span class="help-block">Allowed Types : gif | jpg | png | jpeg</span>
                         <span class="help-block"><?php echo lang('recommended_size'); ?> : 3000 x 2024</span>
                     </div>
                     <input type="hidden" name="redirect" value='patient/documents'>
