@@ -42,10 +42,10 @@ class Camp extends MX_Controller {
     public function addNewCamp() {
         //echo "<pre>"; print_r($_POST); exit;
         $id = $this->input->post('id');
-        $name = $this->input->post('camp_name');
-        $address = $this->input->post('camp_address');
-        $phone = $this->input->post('camp_phone');
-        $date = date('Y-m-d', strtotime($this->input->post('camp_date')));
+        $name = $this->input->post('name');
+        $address = $this->input->post('address');
+        $phone = $this->input->post('phone');
+        $date = date('Y-m-d', strtotime($this->input->post('date')));
         $file_name = $_FILES['img_url']['name'];
         $file_name_pieces = explode('_', $file_name);
         $new_file_name = '';

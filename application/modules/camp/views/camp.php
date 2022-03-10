@@ -94,22 +94,22 @@
                 <h4 class="modal-title">  <?php echo lang('add_camp'); ?></h4>
             </div>
             <div class="modal-body">
-                <form role="form" action="camp/addNewCamp" class="clearfix" method="post" enctype="multipart/form-data">
+                <form role="form" action="camp/addNewCamp" class="clearfix" method="post" id="addUserForm" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_name'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control" required name="camp_name" id="exampleInputEmail1" value=''>
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_address'); ?></label><span class="manda-span">*</span>
-                        <textarea class="form-control" name="camp_address" required></textarea>
+                        <textarea class="form-control" name="address" id="address" ></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_phone'); ?></label><span class="manda-span">*</span>
-                        <input type="number" class="form-control" name="camp_phone" required id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="phone" id="phone" value=''>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_date'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="camp_date" id="exampleInputEmail1" value='' placeholder="" autocomplete="off" required>
+                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="date" value='' placeholder="" autocomplete="off" required>
                     </div>
                     
                     <div class="form-group">
@@ -147,19 +147,19 @@
                 <form role="form" id="editCampForm" class="clearfix" action="camp/addNewCamp" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_name'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control" name="camp_name" id="exampleInputEmail1" value='' required>
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_address'); ?></label><span class="manda-span">*</span>
-                        <textarea class="form-control" name="camp_address" required></textarea>
+                        <textarea class="form-control" name="address" id="address" value=''></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_phone'); ?></label><span class="manda-span">*</span>
-                        <input type="number" class="form-control" name="camp_phone" id="exampleInputEmail1" value='' placeholder="" required>
+                        <input type="number" class="form-control" name="phone" id="phone" value=''>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_date'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="camp_date" id="exampleInputEmail1" value='' placeholder="" autocomplete="off" required>
+                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="exampleInputEmail1" value='' placeholder="" autocomplete="off" required>
                     </div>
 
                     <div class="form-group">
@@ -197,14 +197,13 @@
                                                 }).success(function (response) {
                                                     var d = response.camp.camp_date.split('-');
                                                     var da = d[2] + '-' + d[1] + '-' + d[0];
-                                                    // Populate the form fields with the data returned from server
-                                                    
-                                                    $('#editCampForm').find('[name="camp_date"]').val(da).end()
+                                                    // Populate the form fields with the data returned from server                                                 
+                                                    $('#editCampForm').find('[name="date"]').val(da).end();
                                                     // Populate the form fields with the data returned from server
                                                     $('#editCampForm').find('[name="id"]').val(response.camp.id).end();
-                                                    $('#editCampForm').find('[name="camp_name"]').val(response.camp.camp_name).end();
-                                                    $('#editCampForm').find('[name="camp_address"]').val(response.camp.address).end();
-                                                    $('#editCampForm').find('[name="camp_phone"]').val(response.camp.phone).end();
+                                                    $('#editCampForm').find('[name="name"]').val(response.camp.camp_name).end();
+                                                    $('#editCampForm').find('[name="address"]').val(response.camp.address).end();
+                                                    $('#editCampForm').find('[name="phone"]').val(response.camp.phone).end();
                                                     $('#myModal2').modal('show');
                                                 });
                                             });

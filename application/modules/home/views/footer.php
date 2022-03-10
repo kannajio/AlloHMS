@@ -67,18 +67,9 @@ if ($language == 'english') {
 }
 ?>
 
-
-
 <script src='common/assets/fullcalendar/locale/<?php echo $lang; ?>.js'></script>
 
-
-
 <script src="common/assets/DataTables/DataTables-1.10.16/custom/js/datatable-responsive-cdn-version-2-2-5.js"></script>
-
-
-
-
-
 
 <script>
     $('.multi-select').multiSelect({
@@ -140,7 +131,6 @@ if ($language == 'english') {
 
 </script>
 
-
 <script type="text/javascript">
 
     $(document).ready(function () {
@@ -169,16 +159,16 @@ if ($language == 'english') {
 					name: "Please enter your Name",
 
 					password: {
-						required: "Please provide a password",
+						required: "Please provide a Password",
 						minlength: "Your password must be at least 5 characters long"
 					},
-					email: "Please enter a valid email address",
+					email: "Please enter a valid Email Address",
 					phone: {
-						required: "Please enter valid phone number",
-						minlength: "Your Phone number must be 10 numbers long"
+						required: "Please enter valid Phone Number",
+						minlength: "Your Phone Number must be 10 numbers long"
 					},
-                    address: "Please enter your address",
-                    profile: "Please enter your profile"
+                    address: "Please enter your Address",
+                    profile: "Please enter your Profile"
 				},
 				errorElement: "em",
 				errorPlacement: function ( error, element ) {
@@ -217,13 +207,13 @@ if ($language == 'english') {
 				},
 				messages: {
 					name: "Please enter your Name",
-					email: "Please enter a valid email address",
+					email: "Please enter a valid Email Address",
 					phone: {
-						required: "Please enter valid phone number",
-						minlength: "Your Phone number must be 10 numbers long"
+						required: "Please enter valid Phone Number",
+						minlength: "Your Phone Number must be 10 numbers long"
 					},
-                    address: "Please enter your address",
-                    profile: "Please enter your profile"
+                    address: "Please enter your Address",
+                    profile: "Please enter your Profile"
 				},
 				errorElement: "em",
 				errorPlacement: function ( error, element ) {
@@ -314,14 +304,6 @@ if ($language == 'english') {
 
 </script>
 
-
-
-
-
-
-
-
-
 <script>
     $(document).ready(function () {
         $('.timepicker-default').timepicker({defaultTime: 'value'});
@@ -341,9 +323,6 @@ if ($language == 'english') {
     });
 
 </script>
-
-
-
 
 <script type="text/javascript">
 
@@ -374,8 +353,6 @@ if ($language == 'english') {
     // }
 
 
-
-
     onElementHeightChange(document.body, function () {
         var windowH = $(window).height();
         var wrapperH = $('#container').height();
@@ -390,11 +367,6 @@ if ($language == 'english') {
             $('#sidebar').removeAttr('style');
         }
     });
-
-
-
-
-
 
 
     $(window).resize(function () {
@@ -416,25 +388,12 @@ if ($language == 'english') {
 
 </script>
 
-
-
-
 <script>
     CKEDITOR.replace("description",
             {
                 height: 400
             });
 </script>
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
