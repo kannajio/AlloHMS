@@ -16,17 +16,17 @@
                 <div class="adv-table editable-table row">
                     <div class="clearfix">
                         <?php echo validation_errors(); ?>
-                        <form role="form" action="donor/addDonor" class="clearfix" method="post" enctype="multipart/form-data">
+                        <form role="form" action="donor/addDonor" class="clearfix" method="post" id="addUserForm" enctype="multipart/form-data">
                             <div class="form-group col-md-5">
-                                <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                                <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='<?php
+                                <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                                <input type="text" class="form-control" name="name" id="name" value='<?php
                                 if (!empty($setval)) {
                                     echo set_value('name');
                                 }
                                 if (!empty($donor->name)) {
                                     echo $donor->name;
                                 }
-                                ?>' placeholder="">
+                                ?>'>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
@@ -48,18 +48,18 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="exampleInputEmail1"><?php echo lang('age'); ?></label>
-                                <input type="text" class="form-control" name="age" id="exampleInputEmail1" value='<?php
+                                <label for="exampleInputEmail1"><?php echo lang('age'); ?><span class="manda-span">*</span></label>
+                                <input type="text" class="form-control" name="age" id="age" value='<?php
                                 if (!empty($setval)) {
                                     echo set_value('age');
                                 }
                                 if (!empty($donor->age)) {
                                     echo $donor->age;
                                 }
-                                ?>' placeholder="">
+                                ?>' required>
                             </div>
                              <div class="form-group col-md-5">
-                                <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?></label>
+                                <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?><span class="manda-span">*</span></label>
                                 <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="ldd" value="<?php
                                 if (!empty($setval)) {
                                     echo set_value('ldd');
@@ -67,12 +67,12 @@
                                 if (!empty($donor->ldd)) {
                                     echo $donor->ldd;
                                 }
-                                ?>" placeholder="">
+                                ?>" id="date" required>
                             </div>
                             
                             <div class="form-group col-md-4">
-                                <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                                <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='<?php
+                                <label for="exampleInputEmail1"><?php echo lang('phone'); ?><span class="manda-span">*</span></label>
+                                <input type="text" class="form-control" name="phone" id="phone" value='<?php
                                 if (!empty($setval)) {
                                     echo set_value('phone');
                                 }
@@ -126,8 +126,8 @@
                            
                             
                             <div class="form-group col-md-3">
-                                <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                                <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='<?php
+                                <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
+                                <input type="text" class="form-control" name="email" id="email" value='<?php
                                 if (!empty($setval)) {
                                     echo set_value('email');
                                 }

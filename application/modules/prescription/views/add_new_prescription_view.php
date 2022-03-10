@@ -30,18 +30,18 @@ if ($this->ion_auth->in_group('Doctor')) {
                         <form role="form" action="prescription/addNewPrescription" class="clearfix" method="post" enctype="multipart/form-data">
                             <div class="">
                                 <div class="form-group col-md-4">
-                                    <label for="exampleInputEmail1"> <?php echo lang('date'); ?></label>
-                                    <input type="text" class="form-control default-date-picker" name="date" id="exampleInputEmail1" value='<?php
+                                    <label for="exampleInputEmail1"> <?php echo lang('date'); ?><span class="manda-span">*</span></label>
+                                    <input type="text" class="form-control default-date-picker" name="date" id="date" value='<?php
                                     if (!empty($setval)) {
                                         echo set_value('date');
                                     }
                                     if (!empty($prescription->date)) {
                                         echo date('d-m-Y', $prescription->date);
                                     }
-                                    ?>' placeholder="" readonly="">
+                                    ?>' readonly="">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="exampleInputEmail1"> <?php echo lang('patient'); ?></label>
+                                    <label for="exampleInputEmail1"> <?php echo lang('patient'); ?><span class="manda-span">*</span></label>
                                     <select class="form-control m-bot15" id="patientchoose" name="patient" value=''>
                                         <?php if (!empty($prescription->patient)) { ?>
                                             <option value="<?php echo $patients->id; ?>" selected="selected"><?php echo $patients->name; ?> - (<?php echo lang('id'); ?> : <?php echo $patients->id; ?>)</option>  

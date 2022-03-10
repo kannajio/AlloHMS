@@ -26,8 +26,6 @@ class Appointment extends MX_Controller {
             redirect('home/permission');
         }
 
-
-
         $data['patients'] = $this->patient_model->getPatient();
         $data['doctors'] = $this->doctor_model->getDoctor();
         $data['settings'] = $this->settings_model->getSettings();

@@ -435,9 +435,6 @@
     });
 </script>
 
-
-
-
 <script>
     $(document).ready(function () {
         $(".flashmessage").delay(3000).fadeOut(100);

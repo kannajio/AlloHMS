@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_date'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="date" value='' placeholder="" autocomplete="off" required>
+                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="date" value='' autocomplete="off" required>
                     </div>
                     
                     <div class="form-group">
@@ -159,7 +159,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('camp_date'); ?></label><span class="manda-span">*</span>
-                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="exampleInputEmail1" value='' placeholder="" autocomplete="off" required>
+                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="date1" value='' autocomplete="off" required>
                     </div>
 
                     <div class="form-group">

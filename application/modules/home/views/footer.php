@@ -119,7 +119,6 @@ if ($language == 'english') {
         autoclose: true
     });
 
-
     $('#date').on('changeDate', function () {
         $('#date').datepicker('hide');
     });
@@ -127,7 +126,6 @@ if ($language == 'english') {
     $('#date1').on('changeDate', function () {
         $('#date1').datepicker('hide');
     });
-
 
 </script>
 

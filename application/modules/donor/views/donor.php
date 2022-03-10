@@ -95,10 +95,10 @@
                 <h4 class="modal-title"> <?php echo lang('add_donor'); ?></h4>
             </div>
             <div class="modal-body row">
-                <form role="form" action="donor/addDonor" class="clearfix" method="post" enctype="multipart/form-data">
+                <form role="form" action="donor/addDonor" class="clearfix" method="post" id="addUserForm" enctype="multipart/form-data">
                     <div class="form-group col-md-5">
-                        <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
@@ -115,16 +115,16 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="exampleInputEmail1"><?php echo lang('age'); ?></label>
-                        <input type="text" class="form-control" name="age" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('age'); ?><span class="manda-span">*</span></label>
+                        <input type="number" class="form-control" name="age" id="age" value='' placeholder="" required>
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?></label>
-                        <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="ldd" value="" placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?><span class="manda-span">*</span></label>
+                        <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="ldd" value="" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone" value=''>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
@@ -155,8 +155,8 @@
 
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="email" id="email" value=''>
                     </div>
 
                     <div class="form-group col-md-12">
@@ -186,10 +186,10 @@
                 <h4 class="modal-title">  <?php echo lang('edit_donor'); ?></h4>
             </div>
             <div class="modal-body row">
-                <form role="form" id="editDonorForm" class="clearfix" action="donor/addDonor" method="post" enctype="multipart/form-data">
+                <form role="form" id="editDonorForm" class="clearfix editUserForm" action="donor/addDonor" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-5">
-                        <label for="exampleInputEmail1"><?php echo lang('name'); ?></label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1"><?php echo lang('blood_group'); ?></label>
@@ -206,16 +206,16 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="exampleInputEmail1"><?php echo lang('age'); ?></label>
-                        <input type="text" class="form-control" name="age" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('age'); ?><span class="manda-span">*</span></label>
+                        <input type="number" class="form-control" name="age" id="age" value='' required>
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?></label>
-                        <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="ldd" value="" placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('last_donation_date'); ?><span class="manda-span">*</span></label>
+                        <input class="form-control form-control-inline input-medium default-date-picker" type="text" name="ldd" value="" id="date" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('phone'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone" value=''>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="exampleInputEmail1"><?php echo lang('sex'); ?></label>
@@ -246,8 +246,8 @@
 
 
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control" name="email" id="email" value=''>
                     </div>
 
                     <input type="hidden" name="id" value=''>

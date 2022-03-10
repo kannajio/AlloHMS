@@ -46,13 +46,6 @@
                             }
                         </style>
 
-
-
-
-
-
-
-
                         </tbody>
                     </table>
                 </div>
@@ -150,7 +143,6 @@
                     <div class="form-group col-md-6">    
                         <label for="exampleInputEmail1"><?php echo lang('doctor'); ?></label>
                         <select class="form-control m-bot15" id="doctorchoose1" name="doctor" value=''>
-
                         </select>
                     </div>
 
@@ -209,12 +201,6 @@
 </div>
 <!-- Add Patient Modal-->
 
-
-
-
-
-
-
 <!-- Edit Patient Modal-->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -224,7 +210,7 @@
                 <h4 class="modal-title">  <?php echo lang('edit_patient'); ?></h4>
             </div>
             <div class="modal-body row">
-            <form role="form" id="editDoctorForm" class="clearfix editUserForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
+            <form role="form" id="editPatientForm" class="clearfix editUserForm" action="patient/addNew" class="clearfix" method="post" enctype="multipart/form-data">
 
                     <!-- <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Patient Id</label>
@@ -233,17 +219,17 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('name'); ?><span class="manda-span">*</span></label>
-                        <input type="text" class="form-control" name="name" id="name" value='' placeholder="">
+                        <input type="text" class="form-control" name="name" id="name" value=''>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('email'); ?><span class="manda-span">*</span></label>
-                        <input type="text" class="form-control" name="email" id="email" value='' placeholder="">
+                        <input type="text" class="form-control" name="email" id="email" value=''>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('change'); ?><?php echo lang('password'); ?><span class="manda-span">*</span></label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="">
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
 
 
@@ -356,10 +342,6 @@
                     }
                     ?>'>
 
-
-
-
-
                     <section class="col-md-12">
                         <button type="submit" name="submit" class="btn btn-info pull-right"><?php echo lang('submit'); ?></button>
                     </section>
@@ -370,8 +352,8 @@
         </div><!-- /.modal-dialog -->
     </div>
 </div>
-
 <!-- Edit Patient Modal-->
+
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg"> 
         <div class="modal-content">
@@ -437,11 +419,6 @@
                         <div class="birthdateClass"></div>     
                     </div>
 
-
-
-
-
-
                     <div class="form-group col-md-4">    
                     </div>
                     <div class="form-group col-md-4">    
@@ -451,20 +428,12 @@
                         <div class="doctorClass"></div>
                     </div>
 
-
-
-
-
-
-
                 </form>
 
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
 </div>
-
-
 
 <script src="common/js/codearistos.min.js"></script>
 
@@ -494,9 +463,6 @@
 </script>
 
 -->
-
-
-
 <script type="text/javascript">
 
     $(".table").on("click", ".editbutton", function () {
@@ -545,8 +511,6 @@
     });
 
 </script>
-
-
 
 <script type="text/javascript">
 
@@ -604,10 +568,6 @@
 
 </script>
 
-
-
-
-
 <script>
 
 
@@ -658,12 +618,6 @@
     });
 
 </script>
-
-
-
-
-
-
 
 <script>
     $(document).ready(function () {
@@ -717,13 +671,8 @@
     });
 </script>
 
-
-
 <script>
     $(document).ready(function () {
         $(".flashmessage").delay(3000).fadeOut(100);
     });
 </script>
-
-
-

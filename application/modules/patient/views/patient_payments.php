@@ -147,11 +147,7 @@
 
                     <div class="form-group col-md-6">    
                         <label for="exampleInputEmail1"><?php echo lang('doctor'); ?></label>
-                        <select class="form-control js-example-basic-single"  name="doctor" value=''> 
-                            <option value=""> </option>
-                            <?php foreach ($doctors as $doctor) { ?>                                        
-                                <option value="<?php echo $doctor->id; ?>"><?php echo $doctor->name; ?> </option>
-                            <?php } ?> 
+                        <select class="form-control m-bot15" id="doctorchoose1" name="doctor" value=''>
                         </select>
                     </div>
 
@@ -505,7 +501,57 @@
 
 </script>
 
+<script>
+    $(document).ready(function () {
+        $("#doctorchoose").select2({
+            placeholder: '<?php echo lang('select_doctor'); ?>',
+            allowClear: true,
+            ajax: {
+                url: 'doctor/getDoctorinfo',
+                type: "post",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        searchTerm: params.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    return {
+                        results: response
+                    };
+                },
+                cache: true
+            }
 
+        });
+        $("#doctorchoose1").select2({
+            placeholder: '<?php echo lang('select_doctor'); ?>',
+            allowClear: true,
+            ajax: {
+                url: 'doctor/getDoctorInfo',
+                type: "post",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        searchTerm: params.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    return {
+                        results: response
+                    };
+                },
+                cache: true
+            }
+
+        });
+
+
+
+    });
+</script>
 
 <script>
     $(document).ready(function () {

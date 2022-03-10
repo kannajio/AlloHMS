@@ -84,11 +84,11 @@ if ($this->ion_auth->in_group('Doctor')) {
                         ?>' placeholder="">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('date'); ?></label>
-                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="exampleInputEmail1" value='' placeholder="">
+                        <label for="exampleInputEmail1"><?php echo lang('date'); ?><span class="manda-span">*</span></label>
+                        <input type="text" class="form-control form-control-inline input-medium default-date-picker" name="date" id="date" value=''>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('patient'); ?></label>
+                        <label for="exampleInputEmail1"><?php echo lang('patient'); ?><span class="manda-span">*</span></label>
                         <select class="form-control m-bot15 js-example-basic-single" name="patient" value=''> 
                             <option value="">Select .....</option>
                             <?php foreach ($patients as $patientss) { ?>
