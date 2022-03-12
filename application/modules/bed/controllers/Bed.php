@@ -251,9 +251,17 @@ class Bed extends MX_Controller {
             );
 
             if (empty($id)) {
-                $this->bed_model->insertAllotment($data);
-                $this->bed_model->updateBedByBedId($bed_id, $data1);
-                $this->session->set_flashdata('feedback', lang('added'));
+                $query = $this->db->query("SELECT * FROM alloted_bed WHERE a_time >='" . $a_time . "'  AND d_time <= '" . $d_time . "'");
+                $res = $query->num_rows();
+                if($res == 0)
+                {
+                    $this->bed_model->insertAllotment($data);
+                    $this->bed_model->updateBedByBedId($bed_id, $data1);
+                    $this->session->set_flashdata('feedback', lang('added'));
+                } else {
+                    $this->session->set_flashdata('feedback', lang('bed_already_alloted_for_same_date'));
+                }
+
             } else {
                 $this->bed_model->updateAllotment($id, $data);
                 $this->bed_model->updateBedByBedId($bed_id, $data1);

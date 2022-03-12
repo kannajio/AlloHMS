@@ -121,6 +121,15 @@ class Bed_model extends CI_model {
         return $query->result();
     }
 
+    function getAlreadyAllotedBed($a_time, $d_time) {
+        $query = $this->db->select('*')
+                ->from('alloted_bed')
+                ->where('hospital_id', $this->session->userdata('hospital_id'))
+                ->where("(a_time >='" . $a_time . "' AND d_time <='" . $d_time . "')", NULL, FALSE)
+                ->get();
+        return $query->result();
+    }
+
     function getBedAllotmentBySearch($search) {
         $this->db->order_by('id', 'desc');
         $query = $this->db->select('*')

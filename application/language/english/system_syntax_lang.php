@@ -665,6 +665,7 @@ $lang['now'] = 'Now';
 $lang['meeting_duration_minutes'] = 'Meeting Duration (Minutes)';
 $lang['timezone'] = 'Timezone';
 $lang['this_email_address_is_already_registered'] = 'This email address Is Already Registered';
+$lang['bed_already_alloted_for_same_date'] = 'Bed already alloted for same date';
 $lang['added'] = 'Added';
 $lang['updated'] = 'Updated';
 $lang['deleted'] = 'Deleted';
