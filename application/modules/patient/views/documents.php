@@ -100,7 +100,6 @@
 
 <script>
 
-
     $(document).ready(function () {
         var table = $('#editable-sample').DataTable({
             responsive: true,
@@ -110,7 +109,7 @@
             "serverSide": true,
             "searchable": true,
             "ajax": {
-                url: "patient/getDocuments",
+                url: "patient/getPatient",
                 type: 'POST',
             },
             scroller: {
@@ -127,7 +126,7 @@
                 {
                     extend: 'print',
                     exportOptions: {
-                        columns: [1, 2, 3],
+                        columns: [0, 1, 2],
                     }
                 },
             ],
@@ -141,17 +140,14 @@
             "language": {
                 "lengthMenu": "_MENU_",
                 search: "_INPUT_",
-                searchPlaceholder: "Search..."
-            },
-
+                "url": "common/assets/DataTables/languages/<?php echo $this->language; ?>.json"
+            }
         });
-
-        table.buttons().container()
-                .appendTo('.custom_buttons');
+        table.buttons().container().appendTo('.custom_buttons');
     });
 
-
 </script>
+
 <script>
     $(document).ready(function () {
         $("#patientchoose").select2({

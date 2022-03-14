@@ -18,6 +18,7 @@ class Doctor_model extends CI_model {
 
     function getDoctor() {
         $this->db->where('hospital_id', $this->session->userdata('hospital_id'));
+        $this->db->order_by('doctor.id', 'desc');
         $query = $this->db->get('doctor');
         return $query->result();
     }

@@ -384,12 +384,12 @@
 
 
 
-
-
 <script>
+
     $(document).ready(function () {
         var table = $('#editable-sample').DataTable({
             responsive: true,
+            //   dom: 'lfrBtip',
 
             "processing": true,
             "serverSide": true,
@@ -401,7 +401,6 @@
             scroller: {
                 loadingIndicator: true
             },
-
             dom: "<'row'<'col-sm-3'l><'col-sm-5 text-center'B><'col-sm-4'f>>" +
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row'<'col-sm-5'i><'col-sm-7'p>>",
@@ -413,11 +412,10 @@
                 {
                     extend: 'print',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5, 6],
+                        columns: [0, 1, 2],
                     }
                 },
             ],
-
             aLengthMenu: [
                 [10, 25, 50, 100, -1],
                 [10, 25, 50, 100, "All"]
@@ -433,6 +431,7 @@
         });
         table.buttons().container().appendTo('.custom_buttons');
     });
+
 </script>
 
 <script>
