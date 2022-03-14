@@ -80,12 +80,12 @@ $db['default'] = array(
 	//'username' => 'allohmsj_hms',
 	//'password' => 'B8y.s7GxDBNE',
 	//pleask cpanel
-	'username' => 'root',
-	'password' => '',
+	'username' => 'demo_allohms',
+	'password' => 'W1t*un30',
 	//local
 	//'username' => 'root',
 	//'password' => '',
-	'database' => 'allohms',
+	'database' => 'demo_allohms',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
