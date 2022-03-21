@@ -48,7 +48,7 @@ class Doctor_model extends CI_model {
     }
 
     function getDoctorByLimitBySearch($limit, $start, $search) {
-        $this->db->like('id', $search);
+        //$this->db->like('id', $search);
         $this->db->limit($limit, $start);
         $query = $this->db->select('*')
                 ->from('doctor')
@@ -98,7 +98,7 @@ class Doctor_model extends CI_model {
             $query = $this->db->select('*')
                     ->from('doctor')
                     ->where('hospital_id', $this->session->userdata('hospital_id'))
-                    ->where("(id LIKE '%" . $searchTerm . "%' OR name LIKE '%" . $searchTerm . "%')", NULL, FALSE)
+                    ->where("(serial_id LIKE '%" . $searchTerm . "%' OR name LIKE '%" . $searchTerm . "%')", NULL, FALSE)
                     ->get();
             $users = $query->result_array();
         } else {
@@ -133,7 +133,7 @@ class Doctor_model extends CI_model {
             $query = $this->db->select('*')
                     ->from('doctor')
                     ->where('hospital_id', $this->session->userdata('hospital_id'))
-                    ->where("(id LIKE '%" . $searchTerm . "%' OR name LIKE '%" . $searchTerm . "%')", NULL, FALSE)
+                    ->where("(serial_id LIKE '%" . $searchTerm . "%' OR name LIKE '%" . $searchTerm . "%')", NULL, FALSE)
                     ->get();
             $users = $query->result_array();
         } else {
