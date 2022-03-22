@@ -401,6 +401,7 @@
     //         video.play();
     //     });
     // }
+
     navigator.mediaDevices.getUserMedia({
         video: true
     }).then(
