@@ -203,32 +203,58 @@ class Email extends MX_Controller {
         }
         // $message = urlencode("Test Message");
         if (!empty($to)) {
+            // Load PHPMailer library
+            $this->load->library('phpmailer_library');
+
+            // PHPMailer object
+            $mail = $this->phpmailer_library->load();
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = SMTP_HOST;  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = SMTP_USERNAME;                 // SMTP username
+            $mail->Password = SMTP_PASSWORD;                           // SMTP password
+            $mail->SMTPSecure = SMTP_SECURE;                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = SMTP_PORT;                                    // TCP port to connect to
+            $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+            $mail->isHTML(true);                                  // Set email format to HTML
+
             // $message = $this->input->post('message');
             $subject = $this->input->post('subject');
 
             foreach ($data2 as $key => $value) {
                 foreach ($value as $key2 => $value2) {
+                    $mail->From = $emailSettings->admin_email;
+                    $mail->addAddress($key2);
+                    $mail->Subject = $subject;
+                    $mail->Body    = $value2;
+                    if(!$mail->send()) {
+                        // echo 'Message could not be sent.';
+                        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+                        $this->session->set_flashdata('feedback', lang('not_sent'));
+                    } else {
+                        $data = array();
+                        $date = time();
+                        $data = array(
+                            'subject' => $subject,
+                            'message' => $message,
+                            'date' => $date,
+                            'reciepient' => $recipient,
+                            'user' => $this->ion_auth->get_user_id()
+                        );
+                        $this->email_model->insertEmail($data);
+                        // echo 'Message has been sent';
+                        $this->session->set_flashdata('feedback', lang('message_sent'));
+                    }
+                    //exit;
+                    // $this->email->from($emailSettings->admin_email);
+                    // $this->email->to($key2);
+                    // $this->email->subject($subject);
+                    // $this->email->message($value2);
 
 
-
-                    $this->email->from($emailSettings->admin_email);
-                    $this->email->to($key2);
-                    $this->email->subject($subject);
-                    $this->email->message($value2);
-
-
-                    $this->email->send();
-                    $data = array();
-                    $date = time();
-                    $data = array(
-                        'subject' => $subject,
-                        'message' => $message,
-                        'date' => $date,
-                        'reciepient' => $recipient,
-                        'user' => $this->ion_auth->get_user_id()
-                    );
-                    $this->email_model->insertEmail($data);
-                    //  $this->session->set_flashdata('feedback', 'Message Sent');
+                    //$this->email->send();
+                    
+                    // $this->session->set_flashdata('feedback', 'Message Sent');
                     // $this->session->set_flashdata('feedback', 'Message Sent');
                 }
             }

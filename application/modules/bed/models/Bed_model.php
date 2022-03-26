@@ -163,6 +163,17 @@ class Bed_model extends CI_model {
     }
 
     function deleteBedAllotment($id) {
+        $this->db->where('hospital_id', $this->session->userdata('hospital_id'));
+        $this->db->where('id', $id);
+        $query = $this->db->get('alloted_bed');
+        $bedid = $query->row();
+
+        $data = array();
+        $data['last_a_time'] = '';
+        $data['last_d_time'] = '';
+        $this->db->where('bed_id', $bedid->bed_id);
+        $this->db->update('bed', $data);
+
         $this->db->where('id', $id);
         $this->db->delete('alloted_bed');
     }
