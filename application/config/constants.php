@@ -89,4 +89,4 @@ define('SMTP_HOST','smtp.gmail.com');
 define('SMTP_USERNAME','ttstestsmtp@gmail.com');
 define('SMTP_PASSWORD','ttsTest_tts');
 define('SMTP_SECURE','tls');
-define('SMTP_PORT',587);
+define('SMTP_PORT',587); 
